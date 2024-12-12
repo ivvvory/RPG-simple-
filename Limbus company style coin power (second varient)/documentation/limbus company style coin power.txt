@@ -1,0 +1,33 @@
+class coin:
+        Initialize a coin with base power and flip power.
+        :param base_power: The power before flipping the coin.
+        :param flip_power: Additional power if the coin flip succeeds.
+
+def flip:
+        Simulate a coin flip.
+        :return: The power value of the coin after the flip. 
+
+class skill: 
+        Initialize a skill with a list of coins.
+        :param coins: List of Coin objects.
+
+def simulate_skill:
+        Simulate the coin flips for the skill and calculate total power.
+        :return: Total power of the skill after all coin flips.
+
+main if:
+if __name__ == "__main__":
+    # Define some coins
+    coin1 = Coin(base_power=3, flip_power=5)
+    coin2 = Coin(base_power=2, flip_power=4)
+    coin3 = Coin(base_power=1, flip_power=6)
+
+    # Create a skill with these coins
+    skill = Skill(coins=[coin1, coin2, coin3])
+
+    # Simulate the skill
+    total_power = skill.simulate_skill()
+    print(f"Total Skill Power: {total_power}")
+
+
+no errors we up
