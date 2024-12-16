@@ -40,8 +40,18 @@ class Combatant:
             print("\nYour cards:")
             for i, card in enumerate(self.deck):
                 print(f"{i + 1}: {card.name} ({card.card_type})")
-            choice = int(input(f"Choose a card to play (1-{len(self.deck)}): ")) - 1
-            return self.deck[choice]
+
+            # Input validation loop
+            while True:
+                try:
+                    choice = int(input(f"Choose a card to play (1-{len(self.deck)}): ")) - 1
+                    if 0 <= choice < len(self.deck):
+                        return self.deck[choice]
+                    else:
+                        print(f"Please enter a number between 1 and {len(self.deck)}.")
+                except ValueError:
+                    print("Invalid input. Please enter a valid number.")
+
         else:
             return random.choice(self.deck)  # AI randomly selects a card
 
@@ -156,11 +166,11 @@ def main():
         combat_round(player, enemy)
 
     if player.hp > enemy.hp:
-        print("\nPlayer wins!")
+        print("\nPlayer wins")
     elif enemy.hp > player.hp:
-        print("\nEnemy wins!")
+        print("\nEnemy wins")
     else:
-        print("\nIt's a draw!")
+        print("\nIt's a draw")
 
 
 if __name__ == "__main__":
